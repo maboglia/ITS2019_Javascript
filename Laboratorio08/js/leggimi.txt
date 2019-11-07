@@ -1,0 +1,17 @@
+JS01 npm init
+1) inizializza progetto con npm init
+2) modifica package.json per utilizzare lite-server
+3) crea index.html e index.json
+4) esegui il progetto su server con npm run dev
+5) enjoy :)
+
+1) JS02 variable scope
+
+2) block scope
+
+3) closures
+
+4) closures block scope
+
+5) Immediately Invoked Function Expression
+

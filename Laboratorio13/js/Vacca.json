@@ -1,0 +1,38 @@
+{
+  "nome": "Federica",
+  "cognome": "Vacca",
+
+  "jobTitle": "Junior Front-end Developer",
+  "anno": 1997,
+
+  "titolo": "Diploma",
+
+  "skill": [
+    { "linguaggio": "PHP", "voto": 60 },
+    { "linguaggio": "JAVA", "voto": 70 },
+    { "linguaggio": "HTML/CSS", "voto": 80 },
+    { "linguaggio": "JAVASCRIPT", "voto": 100 }
+  ],
+
+  "foto": "miaImg.png",
+
+  "elevator": "lorem ipsum...",
+
+  "portfolio": [
+    {
+      "titolo": "sito web uno",
+      "img": "foto_lavoro1.jpg",
+      "descrizione": "bla bla bla"
+    },
+    {
+      "titolo": "sito web due",
+      "img": "foto_lavoro1.jpg",
+      "descrizione": "bla bla bla"
+    },
+    {
+      "titolo": "sito web tre",
+      "img": "foto_lavoro1.jpg",
+      "descrizione": "bla bla bla"
+    }
+  ]
+}

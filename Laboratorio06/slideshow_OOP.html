@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Slideshow</title>
+    <style>
+        body{font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: 16px;}
+        .container { height: 100%; width: 90%; margin:0 auto; }
+        #main { margin:0 auto;height:500px;width: 90%;border: 1px solid red;}
+        #contatore{margin:50px auto;height: 250px;width: 250px;border:1px dashed blueviolet;text-align: center; }
+        #bottoni{width:95%; margin:0 auto; text-align: center; }
+        .btn { width: 180px; border: 1px solid cadetblue;  }
+        #contatore > img {height: 250px;width: 250px;}
+        #miniature img {height: 70px;width: 70px;}
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div id="main">
+            <figure id="contatore">
+                <img src="" alt="foto copertina" id="img_slide">
+                <figcaption id="titolo_foto"></figcaption>
+            </figure>
+            <div id="bottoni">
+                <button class="btn" onclick="prev()">prev</button>
+                <button class="btn" onclick="next()">next</button>
+            </div>
+            <div id="miniature">
+
+            </div>
+        </div>
+
+
+    </div>
+
+<script>
+var contatore = 0;
+var display = document.getElementById("contatore");
+var cornice = document.getElementById("img_slide");
+var titolo = document.getElementById("titolo_foto");
+var miniature = document.getElementById("miniature");
+
+var calciatori = [
+ {
+    nome: "Gullit",
+    foto: "gullit.png",
+    gol: 400
+},
+
+{
+    nome: "Marchisio",
+    foto: "Marchisio.jpg",
+    gol: 4
+},
+
+ {
+    nome: "Modric",
+    foto: "modric.png",
+    gol: 150
+}
+];
+
+calciatori[calciatori.length] = { 
+    nome: "Pato",
+    foto: "pato.jpg",
+    gol: 70
+    };
+
+calciatori[calciatori.length] = { 
+    nome: "Ronaldo",
+    foto: "ronaldo.jpg",
+    gol: 70
+    };
+
+var percorso = "img/";
+
+cornice.src = percorso + calciatori[0].foto;
+
+console.log(  calciatori[4].nome );
+
+
+function prev(){
+//    contatore = contatore - 1; 
+//    contatore -=1;
+    if (contatore > 0 )
+    contatore--; 
+    console.log("prev ",contatore);
+    mostra();
+}
+
+function next(){
+    if (contatore < calciatori.length - 1 )
+    contatore++; 
+    console.log("next ",contatore);
+    mostra();
+}
+
+function mostra() {
+    titolo.innerHTML = "<h2>"+calciatori[contatore].nome+"</h2>";
+    cornice.src = percorso + calciatori[contatore].foto;
+}
+
+function miniaturizza() {
+    //var stringa = "";
+   for (let index = 0; index < calciatori.length; index++) {
+        
+        const calciatore = calciatori[index];
+
+        let miniCalciatore = document.createElement("img");
+        miniCalciatore.setAttribute("src", percorso + calciatore.foto);
+        miniCalciatore.onclick = function () {alert('ciao da ' + calciatore.nome)};
+        miniature.appendChild(miniCalciatore);
+
+
+       //stringa += "<img src=" + percorso +calciatore.foto + ">";
+   } 
+       //console.log("stringa html", stringa);
+       //miniature.innerHTML = stringa;
+
+
+}
+miniaturizza();
+var x = {valore : 10};
+var y = x;
+
+x.valore = 20;
+
+</script>
+
+<script src="hello_oggetto.js"></script>
+
+
+</body>
+</html>
